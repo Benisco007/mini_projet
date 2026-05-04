@@ -1,7 +1,10 @@
 <?php
 session_start();
 include_once "config.php";
-if (isset($_POST["login"]) && isset($_POST["password"])) {
+if (
+    isset($_POST["login"]) && isset($_POST["password"])
+    && !empty($_POST['login']) && !empty($_POST['password'])
+) {
     $login = $_POST["login"];
     $password = $_POST["password"];
     $req = $idcom->prepare("SELECT * FROM user WHERE login= ?");

@@ -1,6 +1,9 @@
 <?php
 include_once "config.php";
-if (isset($_POST["nom"]) && isset($_POST["prenom"]) && isset($_POST["num"]) && isset($_POST["login"]) && isset($_POST["password"])) {
+if (
+    isset($_POST["nom"]) && isset($_POST["prenom"]) && isset($_POST["num"]) && isset($_POST["login"]) && isset($_POST["password"])
+    && !empty($_POST['nom']) && !empty($_POST['prenom']) && !empty($_POST['num']) && !empty($_POST['login']) && !empty($_POST['password'])
+) {
     $login = $_POST["login"];
     $nom = $_POST["nom"];
     $prenom = $_POST["prenom"];
